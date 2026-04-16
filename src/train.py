@@ -96,14 +96,22 @@ print(confusion_matrix(y_true, y_pred))
 
 import matplotlib.pyplot as plt
 
-# Show some predictions
+# Label mapping
+labels_map = {0: "Fire", 1: "Smoke"}
+
+# Reset test generator
+test_data.reset()
+
+# Get sample images
 images, labels = next(test_data)
 
+# Predict
 preds = model.predict(images)
 preds = (preds > 0.5).astype(int)
 
+# Show 5 images
 for i in range(5):
     plt.imshow(images[i])
-    plt.title(f"Predicted: {preds[i][0]}")
+    plt.title(f"Predicted: {labels_map[preds[i][0]]}")
     plt.axis('off')
     plt.show()
