@@ -93,3 +93,17 @@ print(classification_report(y_true, y_pred))
 # Confusion Matrix
 print("\n📉 Confusion Matrix:")
 print(confusion_matrix(y_true, y_pred))
+
+import matplotlib.pyplot as plt
+
+# Show some predictions
+images, labels = next(test_data)
+
+preds = model.predict(images)
+preds = (preds > 0.5).astype(int)
+
+for i in range(5):
+    plt.imshow(images[i])
+    plt.title(f"Predicted: {preds[i][0]}")
+    plt.axis('off')
+    plt.show()
