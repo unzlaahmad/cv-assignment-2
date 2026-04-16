@@ -84,3 +84,10 @@ Example:   Confusion Matrix:
 pip install -r requirements.txt
 python src/preprocess.py
 python src/train.py
+
+
+1. Smoke classified as fire due to similar texture
+2. Small fire regions not detected
+3. Low light conditions affect detection accuracy
+4. Fog or dust misclassified as smoke
+5. Blurry images reduce model performance
