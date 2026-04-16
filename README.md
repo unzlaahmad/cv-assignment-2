@@ -91,3 +91,5 @@ python src/train.py
 3. Low light conditions affect detection accuracy
 4. Fog or dust misclassified as smoke
 5. Blurry images reduce model performance
+
+Dataset was manually organized and split into train (70%), validation (15%), and test (15%) sets.
